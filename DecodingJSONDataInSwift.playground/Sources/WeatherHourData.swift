@@ -18,17 +18,12 @@ public struct WeatherHourData {
 
 extension WeatherHourData: JSONDecodable {
 
-    public init?(JSON: Any) {
-        guard let JSON = JSON as? [String: AnyObject] else { return nil }
+    public init(decoder: JSONDecoder) throws {
+        self.windSpeed = try decoder.decode(key: "windSpeed")
+        self.temperature = try decoder.decode(key: "temperature")
+        self.precipitation = try decoder.decode(key: "precipIntensity")
 
-        guard let time = JSON["time"] as? Double else { return nil }
-        guard let windSpeed = JSON["windSpeed"] as? Int else { return nil }
-        guard let temperature = JSON["temperature"] as? Double else { return nil }
-        guard let precipitation = JSON["precipIntensity"] as? Double else { return nil }
-
-        self.windSpeed = windSpeed
-        self.temperature = temperature
-        self.precipitation = precipitation
+        let time: Double = try decoder.decode(key: "time")
         self.time = Date(timeIntervalSince1970: time)
     }
     
