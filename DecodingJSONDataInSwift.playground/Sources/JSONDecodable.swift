@@ -1,6 +1,6 @@
 import Foundation
 
-protocol JSONDecodable {
+public protocol JSONDecodable {
 
     init(decoder: JSONDecoder) throws
 
@@ -19,6 +19,13 @@ public struct JSONDecoder {
     // MARK: - Properties
 
     private let JSONData: JSON
+
+    // MARK: - Static Methods
+
+    public static func decode<T: JSONDecodable>(data: Data) throws -> T {
+        let decoder = try JSONDecoder(data: data)
+        return try T(decoder: decoder)
+    }
 
     // MARK: - Initialization
 
