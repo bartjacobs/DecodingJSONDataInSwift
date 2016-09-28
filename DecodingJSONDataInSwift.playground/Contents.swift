@@ -7,8 +7,7 @@ let url = Bundle.main.url(forResource: "response", withExtension: "json")!
 let data = try! Data(contentsOf: url)
 
 do {
-    let decoder = try JSONDecoder(data: data)
-    let weatherData = try WeatherData(decoder: decoder)
+    let weatherData: WeatherData = try JSONDecoder.decode(data: data)
 
     print(weatherData)
 
