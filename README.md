@@ -6,4 +6,7 @@ In the [previous tutorial](https://cocoacasts.com/building-a-weather-application
 
 In this and the next tutorial, we take a detour to take a closer look at three solutions to decode the weather data the application fetches from the Forecast API.
 
+- [Decoding JSON Data In Swift: Part 1](https://cocoacasts.com/building-a-weather-application-with-swift-3-decoding-json-data-in-swift-part-1/)
+- [Decoding JSON Data In Swift: Part 2](https://cocoacasts.com/building-a-weather-application-with-swift-3-decoding-json-data-in-swift-part-2/)
+
 **Read more tutorials on [Cocoacasts](https://cocoacasts.com/building-a-weather-application-with-swift-3-decoding-json-data-in-swift-part-1/)**.
